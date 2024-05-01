@@ -430,63 +430,62 @@ nav ul li a {
 /*-----------------------------------------------------------------------------------*/
 /*  Portfolio
 /*-----------------------------------------------------------------------------------*/
-
-#portfolio {
-  position: relative;
-  padding-bottom: 50px;
+/* Skill item styling */
+.skill-item:nth-child(odd) {
+  background-color: #4e54c8; /* Matte blue - Odd items */
 }
 
-#portfolio .portfolio-list {
-  margin-bottom: 50px;
+.skill-item:nth-child(even) {
+  background-color: #8e9eab; /* Matte grey - Even items */
 }
 
-#portfolio .portfolio-list .nav {
-  display: inline-block;
-  margin: 0;
+.skill-item {
+  width: auto; /* Set width to auto */
+  max-width: 400px; /* Set maximum width to limit box size */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Add shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 60px; /* Adjust spacing between skill blocks */
 }
 
-#portfolio .portfolio-list .nav li {
-  margin: 0 40px 0 0;
-  float: left;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  cursor: pen;
-  font-family: 'Poppins', helvetica;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+.skill-item:hover {
+  transform: translateY(-10px); /* Add slight upward animation on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
 }
 
-#portfolio .portfolio-list .nav li:hover, #portfolio .portfolio-list .nav li.filter-active  {
-  color: #fa9302;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+/* Counter styling */
+.counter-v1 .number-wrap {
+  display: block;
+  font-size: 24px; /* Adjust number size */
+  font-weight: bold;
+  color: #fff;
 }
 
-#portfolio .portfolio-container {
-  display: inline-block;
-  margin-bottom: 50px;
-  width: 100%;
+.counter-label {
+  font-size: 18px; /* Adjust text size */
+  color: #fff;
+  text-transform: uppercase;
 }
 
-.portfolio-thumbnail {
-  margin-bottom: 30px;
-  overflow: hidden;
-  min-height: 260px;
+/* Progress bar styling */
+.progress {
+  height: 10px;
+  margin-top: 20px; /* Increase spacing between counter and progress bar */
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
 
-.portfolio-thumbnail img {
-  max-width: 100%;
+.progress-bar {
+  background-color: #fff; /* Change color as needed */
+  border-radius: 5px;
 }
+
+/* Section heading styling */
+.section-heading-wrap h2 {
+  font-size: 42px; /* Increase heading size */
+} 
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Journal
