@@ -1,10 +1,25 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <!-- meta -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+
+
+
+
+    
 
   <title>SRUSHTI's - Personal Portfolio</title>
   <meta content="" name="keywords">
@@ -45,7 +60,18 @@
     }
   </style>
 </head>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+    <!-- Include jQuery No Conflict -->
+    <script src="path/to/jquery-no-conflict-file.js"></script>
+</head>
 <body>
 
 <!-- start section navbar -->
@@ -84,7 +110,7 @@
     background-color: #ffbb33; /* Brighter orange on hover */
   }
 </style>
-<a href="New folder/Portfoli-main/public/cv/Srushti_Kapase_CV.docx" download="Srushti_Kapase_CV.docx">Download CV</a>
+<a id="down" onclick="downloadCV()">Download CV</a>
 
 
       </div>
@@ -605,5 +631,56 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="module">  
+  // Firebase configuration
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get reference to Firebase Storage
+  var storage = firebase.storage();
+  var storageRef = storage.ref();
+
+  // Function to trigger CV download
+  function downloadCV() {
+      // Get download URL of CV file
+      storageRef.child('Srushti_Kapase_CV.pdf').getDownloadURL()
+          .then(function(url) {
+              // Create an anchor element with download attribute
+              var a = document.createElement('a');
+              a.href = url;
+              a.download = 'your_cv.pdf';
+              a.click();
+          })
+          .catch(function(error) {
+              console.error('Error getting download URL:', error);
+          });
+  }
+
+  
+
+  // Attach click event listener to download button
+  document.getElementById('down').addEventListener('click', downloadCV);
+  
+</script>
+<!-- Include your JavaScript file -->
+<script src="firebase.js"></script>
+<!-- Initialize Firebase -->
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyD0PntruboTBjIw_TQvnr-tTp8Esq7WELg",
+        authDomain:"portfolio-dc410.firebaseapp.com",
+        projectId: "portfolio-dc410",
+        storageBucket:  "portfolio-dc410.appspot.com",
+        messagingSenderId:  "60706541823",
+        appId: "1:60706541823:web:d1bd0e5384a422edb23cca"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+</body>
+</html>
+
+<script src="firebase.js"></script>
 </html>
