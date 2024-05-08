@@ -335,131 +335,61 @@
 </div>
 <!-- End section portfolio -->
 
-
 <style>
+  /* Custom styling for the journal boxes */
   .journal-info {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .journal-info:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .journal-info::before {
-    content: "";
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(128, 128, 128, 0.7) 100%);
-    z-index: 1;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #f3f3f3, #dddddd);
+    z-index: -1;
+    transition: all 0.3s ease;
   }
 
   .journal-info:hover::before {
-    opacity: 0.8;
+    top: -6px;
+    left: -6px;
   }
 
   .journal-info img {
-    width: 100%;
-    height: auto;
-    display: block;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .journal-info:hover img {
+    transform: scale(1.1);
   }
 
   .journal-txt {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    z-index: 2;
-    width: calc(100% - 40px);
-  }
-
-  .journal-txt h4,
-  .journal-txt p {
-    margin: 0;
-  }
-
-  .journal-txt h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .journal-txt p.separator {
-    font-size: 14px;
-  }
-</style>
-<style>
-  .journal-info {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .journal-info::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(128, 128, 128, 0.7) 100%);
-    z-index: 1;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .journal-info:hover::before {
-    opacity: 0.8;
-  }
-
-  .journal-info img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-  }
-
-  .journal-txt {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    z-index: 2;
-    width: calc(100% - 40px);
-  }
-
-  .journal-txt h4,
-  .journal-txt p {
-    margin: 0;
-  }
-
-  .journal-txt h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .journal-txt p.separator {
-    font-size: 14px;
-  }
-
-  .journal-info .highlight-text {
-    color: #000;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 16px;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 </style>
 
 <!-- start section journal -->
-<div id="journal" class="text-center paddsection">
+<div id="journal" class="text-left paddsection">
 
   <div class="container">
     <div class="section-title text-center">
-      <h2>Explore My Certifications</h2>
+      <h2>Certificates</h2>
     </div>
   </div>
 
@@ -470,11 +400,11 @@
         <div class="col-lg-4 col-md-6">
           <div class="journal-info">
 
-            <a href="blog-single.html"><img src="images/blog-post-1.png" class="img-responsive" alt="AWS Certificate"></a>
+            <a href="blog-grid.html"><img src="images/blog-post-1.png" class="img-responsive" alt="img"></a>
 
             <div class="journal-txt">
-              <h4><a href="#blog-single.html">AWS Certification</a></h4>
-              <p class="separator"><span class="highlight-text">Earned by Srushti Kapase</span></p>
+              <h4><a href="#blog-grid.html">AWS</a></h4>
+              <p class="separator">Learned by Srushti Kapase</p>
             </div>
 
           </div>
@@ -483,13 +413,11 @@
         <div class="col-lg-4 col-md-6">
           <div class="journal-info">
 
-            <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="Microsoft Azure Certificate"></a>
+            <a href="blog-single.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="img"></a>
 
             <div class="journal-txt">
-
-              <h4><a href="#blog-single.html">Microsoft Azure Certification</a></h4>
-              <p class="separator"><span class="highlight-text">Earned by Srushti Kapase</span></p>
-
+              <h4><a href="#blog-single.html">MicroSoft Azure</a></h4>
+              <p class="separator">Mastered by Srushti Kapase</p>
             </div>
 
           </div>
@@ -498,13 +426,11 @@
         <div class="col-lg-4 col-md-6">
           <div class="journal-info">
 
-            <a href="blog-single.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="Google Cloud Certificate"></a>
+            <a href="blog-double.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="img"></a>
 
             <div class="journal-txt">
-
-              <h4><a href="blog-single.html">Google Cloud Certification</a></h4>
-              <p class="separator"><span class="highlight-text">Earned by Srushti Kapase</span></p>
-
+              <h4><a href="blog-double.html">Google Cloud</a></h4>
+              <p class="separator">Explored by Srushti Kapase</p>
             </div>
 
           </div>
@@ -517,10 +443,14 @@
 </div>
 <!-- End section journal -->
 
+
 <!-- start section contact -->
 <div id="contact" class="paddsection" style="background-color: #f8f9fa;">
   <div class="container">
+    <form action="contact.php" method="post" role="form" class="contactForm">
+
     <div class="row">
+      
 
       <div class="col-lg-6">
         <div class="contact-contact" style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
