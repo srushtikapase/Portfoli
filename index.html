@@ -47,8 +47,9 @@
 </head>
 
 <body>
+  
+  <!-- start section navbar -->
 
-<!-- start section navbar -->
 <nav id="main-nav" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
   <div class="row">
     <div class="container">
@@ -68,7 +69,8 @@
         <li><a href="#contact" class="smoothScroll" style="color: #333;">Contact</a></li>
       </ul>
       
-      <div class="fab-container">
+      <div class="fab-container"> 
+  
         <!-- Add a new anchor tag with the link to your CV file -->
         <!-- Add this style to make the "Download CV" option brighter -->
 <style>
@@ -269,6 +271,7 @@
           <p class="text-muted">Communication In a Professional Manner.</p>
         </div>
       </div>
+      
     </div>
 
   </div>
@@ -335,8 +338,50 @@
 </div>
 <!-- End section projects -->
 
+<!-- start section portfilo -->
+<style>
+  /* Custom font styles */
+  .skill-item .number-wrap {
+    font-family: 'Roboto', sans-serif; /* Change the font family to your desired font */
+    font-weight: bold; /* Adjust font weight as needed */
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  .skill-item .counter-label {
+    font-family: 'Roboto', sans-serif; /* Change the font family to your desired font */
+    font-weight: bold; /* Adjust font weight as needed */
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  /* Additional styling for creative enhancement */
+  .skill-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
 
-<!-- Start section portfolio -->
+  .skill-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4CAF50, #2196F3); /* Adjust gradient colors as needed */
+    opacity: 0.6;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .skill-item:hover::before {
+    opacity: 0.8;
+  }
+</style>
+
 <div class="unslate_co--section section-counter" id="skills-section">
   <div class="container">
     <div class="section-heading-wrap text-center mb-5">
@@ -345,11 +390,14 @@
     <div class="row pt-5">
       <div class="col-md-12">
         <div class="counter-v1 text-center skills-container">
+          <div class="row">    <div class="row pt-5">
+      <div class="col-md-12">
+        <div class="counter-v1 text-center skills-container">
           <div class="row">
             <div class="col-md-6 col-lg-3">
               <div class="skill-item bg-primary text-white rounded p-4" data-aos="fade-up" data-aos-delay="0">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="79">79</span>
+                  <span class="number number-counter" data-number="79">59</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">JAVA</span>
@@ -359,7 +407,7 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-secondary text-white rounded p-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-item bg-warning text-white rounded p-4" data-aos="fade-up" data-aos-delay="100">
                 <span class="number-wrap">
                   <span class="number number-counter" data-number="75">75</span>
                   <span class="append-text">%</span>
@@ -371,9 +419,9 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-info text-white rounded p-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-item bg-success text-white rounded p-4" data-aos="fade-up" data-aos-delay="200">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="75">75</span>
+                  <span class="number number-counter" data-number="75">70</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">Web design</span>
@@ -383,9 +431,9 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-dark text-white rounded p-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-item bg-info text-white rounded p-4" data-aos="fade-up" data-aos-delay="300">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="78">78</span>
+                  <span class="number number-counter" data-number="78">68</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">C/C++</span>
@@ -395,6 +443,54 @@
               </div>
             </div>
             <!-- Add more skill blocks here -->
+            <div class="col-md-6 col-lg-3">
+              <div class="skill-item bg-secondary text-white rounded p-4" data-aos="fade-up" data-aos-delay="400">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="85">60</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Data Structure</span>
+                <div class="progress">
+                  <div class="progress-bar bg-light" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="skill-item bg-dark text-white rounded p-4" data-aos="fade-up" data-aos-delay="500">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="70">65</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Azure</span>
+                <div class="progress">
+                  <div class="progress-bar bg-light" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="skill-item bg-danger text-white rounded p-4" data-aos="fade-up" data-aos-delay="600">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="82">62</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Database Management</span>
+                <div class="progress">
+                  <div class="progress-bar bg-light" role="progressbar" style="width: 82%;" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="skill-item bg-primary text-white rounded p-4" data-aos="fade-up" data-aos-delay="700">
+                <span class="number-wrap">
+                  <span class="number number-counter" data-number="77">64</span>
+                  <span class="append-text">%</span>
+                </span>
+                <span class="counter-label">Data Analysis</span>
+                <div class="progress">
+                  <div class="progress-bar bg-light" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -402,6 +498,7 @@
   </div>
 </div>
 <!-- End section portfolio -->
+
 
 <style>
   /* Custom styling for the journal boxes */
