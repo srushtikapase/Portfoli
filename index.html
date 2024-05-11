@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+
+
+
+
+    
 
   <title>SRUSHTI's - Personal Portfolio</title>
   <meta content="" name="keywords">
@@ -45,11 +60,21 @@
     }
   </style>
 </head>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+    <!-- Include jQuery No Conflict -->
+    <script src="path/to/jquery-no-conflict-file.js"></script>
+</head>
 <body>
-  
-  <!-- start section navbar -->
 
+<!-- start section navbar -->
 <nav id="main-nav" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
   <div class="row">
     <div class="container">
@@ -59,42 +84,32 @@
       </div>
 
       <div class="responsive"><i data-icon="m" class="ion-navicon-round" style="color: #333; font-size: 24px;"></i></div>
-      <ul 
-      class="nav-menu list-unstyled" style="font-family: 'Montserrat', sans-serif;">
+      <ul class="nav-menu list-unstyled" style="font-family: 'Montserrat', sans-serif;">
         <li><a href="#header" class="smoothScroll" style="color: #333;">About</a></li>
         <li><a href="#about" class="smoothScroll" style="color: #333;">Portfolio</a></li>
-        <li><a href="#services" class="smoothScroll" style="color: #333;">Skills</a></li> <!-- Update this line -->
-        <li><a href="#projects" class="smoothScroll" style="color: #333;">projects</a></li>
+        <li><a href="#services" class="smoothScroll" style="color: #333;">Skills</a></li>
+        <li><a href="#projects" class="smoothScroll" style="color: #333;">Projects</a></li>
         <li><a href="#journal" class="smoothScroll" style="color: #333;">Certificates</a></li>
         <li><a href="#contact" class="smoothScroll" style="color: #333;">Contact</a></li>
       </ul>
       
-      <div class="fab-container"> 
-  
+      <div class="fab-container">
         <!-- Add a new anchor tag with the link to your CV file -->
         <!-- Add this style to make the "Download CV" option brighter -->
-<style>
-  .fab-container a {
-    background-color: #ff9900; /* Bright orange background */
-    color: #ffffff; /* White text */
-    padding: 10px 20px; /* Increase padding for better visibility */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-
-  .fab-container a:hover {
-    background-color: #ffbb33; /* Brighter orange on hover */
-  }
-</style>
-<a href="https://firebasestorage.googleapis.com/v0/b/portfolio-dc410.appspot.com/o/Srushti_Kapase_CV.pdf?alt=media&token=f57af529-1f94-4e42-9e36-e60b782858f2" download="Srushti_Kapase_CV.docx">Download CV</a>
-
-
-      </div>
-      
-        </a>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.0.1/css/ionicons.min.css">
-
+        <style>
+          .fab-container a {
+            background-color: #ff9900; /* Bright orange background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px; /* Increase padding for better visibility */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s ease; /* Smooth transition */
+          }
+          .fab-container a:hover {
+            background-color: #ffbb33; /* Brighter orange on hover */
+          }
+        </style>
+        <a id="down" onclick="downloadCV()">Download CV</a>
       </div>
       
     </div>
@@ -271,7 +286,6 @@
           <p class="text-muted">Communication In a Professional Manner.</p>
         </div>
       </div>
-      
     </div>
 
   </div>
@@ -338,50 +352,8 @@
 </div>
 <!-- End section projects -->
 
-<!-- start section portfilo -->
-<style>
-  /* Custom font styles */
-  .skill-item .number-wrap {
-    font-family: 'Roboto', sans-serif; /* Change the font family to your desired font */
-    font-weight: bold; /* Adjust font weight as needed */
-    font-size: 24px; /* Adjust font size as needed */
-  }
-  .skill-item .counter-label {
-    font-family: 'Roboto', sans-serif; /* Change the font family to your desired font */
-    font-weight: bold; /* Adjust font weight as needed */
-    font-size: 18px; /* Adjust font size as needed */
-  }
-  /* Additional styling for creative enhancement */
-  .skill-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
 
-  .skill-item:hover {
-    transform: translateY(-5px);
-  }
-
-  .skill-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #4CAF50, #2196F3); /* Adjust gradient colors as needed */
-    opacity: 0.6;
-    z-index: -1;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .skill-item:hover::before {
-    opacity: 0.8;
-  }
-</style>
-
+<!-- Start section portfolio -->
 <div class="unslate_co--section section-counter" id="skills-section">
   <div class="container">
     <div class="section-heading-wrap text-center mb-5">
@@ -390,14 +362,11 @@
     <div class="row pt-5">
       <div class="col-md-12">
         <div class="counter-v1 text-center skills-container">
-          <div class="row">    <div class="row pt-5">
-      <div class="col-md-12">
-        <div class="counter-v1 text-center skills-container">
           <div class="row">
             <div class="col-md-6 col-lg-3">
               <div class="skill-item bg-primary text-white rounded p-4" data-aos="fade-up" data-aos-delay="0">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="79">59</span>
+                  <span class="number number-counter" data-number="79">79</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">JAVA</span>
@@ -407,7 +376,7 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-warning text-white rounded p-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="skill-item bg-secondary text-white rounded p-4" data-aos="fade-up" data-aos-delay="100">
                 <span class="number-wrap">
                   <span class="number number-counter" data-number="75">75</span>
                   <span class="append-text">%</span>
@@ -419,9 +388,9 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-success text-white rounded p-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-item bg-info text-white rounded p-4" data-aos="fade-up" data-aos-delay="200">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="75">70</span>
+                  <span class="number number-counter" data-number="75">75</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">Web design</span>
@@ -431,9 +400,9 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-info text-white rounded p-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="skill-item bg-dark text-white rounded p-4" data-aos="fade-up" data-aos-delay="300">
                 <span class="number-wrap">
-                  <span class="number number-counter" data-number="78">68</span>
+                  <span class="number number-counter" data-number="78">78</span>
                   <span class="append-text">%</span>
                 </span>
                 <span class="counter-label">C/C++</span>
@@ -443,54 +412,6 @@
               </div>
             </div>
             <!-- Add more skill blocks here -->
-            <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-secondary text-white rounded p-4" data-aos="fade-up" data-aos-delay="400">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="85">60</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Data Structure</span>
-                <div class="progress">
-                  <div class="progress-bar bg-light" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-dark text-white rounded p-4" data-aos="fade-up" data-aos-delay="500">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="70">65</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Azure</span>
-                <div class="progress">
-                  <div class="progress-bar bg-light" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-danger text-white rounded p-4" data-aos="fade-up" data-aos-delay="600">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="82">62</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Database Management</span>
-                <div class="progress">
-                  <div class="progress-bar bg-light" role="progressbar" style="width: 82%;" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="skill-item bg-primary text-white rounded p-4" data-aos="fade-up" data-aos-delay="700">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="77">64</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Data Analysis</span>
-                <div class="progress">
-                  <div class="progress-bar bg-light" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -498,7 +419,6 @@
   </div>
 </div>
 <!-- End section portfolio -->
-
 
 <style>
   /* Custom styling for the journal boxes */
