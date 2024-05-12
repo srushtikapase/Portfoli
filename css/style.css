@@ -172,6 +172,7 @@ p {
   margin-bottom: 30px;
 }
 
+
 /*-----------------------------------------------------------------------------------*/
 /*  Navbar Top
 /*-----------------------------------------------------------------------------------*/
@@ -260,10 +261,35 @@ nav ul li a {
 .fab i {
   font-size: 24px;
 }
+/* Adjustments for Download CV Button */
+.btn-download {
+  background: #007bff; /* Change background color */
+  color: #fff; /* Change text color */
+  padding: 10px 20px; /* Adjust padding */
+  border-radius: 9px; /* Add border radius */
+  margin-top: 20px; /* Adjust margin */
+}
+
+/* Adjustments for Left Side Icons */
+.left-icons {
+  position: fixed;
+  top: 50%; /* Adjust vertical position */
+  left: 60px; /* Adjust horizontal position */
+  transform: translateY(-50%);
+}
+
+.left-icons a {
+  display: block;
+  font-size: 24px;
+  color: #333; /* Change icon color */
+  margin-bottom: 10px; /* Add spacing between icons */
+}
+
 
 /*----------------------------------------------------------------------------------*/
 /*  Header
 /*-----------------------------------------------------------------------------------*/
+
 
 #header {
   background: url("../images/home-bg.jpg") repeat scroll center center / cover;
@@ -655,27 +681,84 @@ nav ul li a {
 /*-----------------------------------------------------------------------------------*/
 /*  Footer
 /*-----------------------------------------------------------------------------------*/
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Comments */
+.comments, .cmt {
+  background: #fff;
+}
+
+.entry-comments-item {
+  margin-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.entry-comments-avatar {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.entry-comments-body {
+  padding-left: 86px;
+}
+
+.entry-comments-author,
+.rep,
+.entry-comments span a {
+  font-size: 13px;
+  color: #292929;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.entry-comments-reply {
+  padding-left: 10%;
+}
 
 #footer {
   background: #f7f7f7;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0;
 }
 
 #footer .socials-media {
-  width: 100%;
+  text-align: center;
 }
 
 #footer .socials-media ul {
-  display: inline-block;
-  float: none;
-  margin: 0 0 20px 0;
+  margin: 0;
+  padding: 0;
 }
 
 #footer .socials-media ul li {
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 #footer .socials-media ul li a {
@@ -683,32 +766,37 @@ nav ul li a {
   color: #999;
   letter-spacing: 0.1em;
   font-weight: 500;
-  background: transparent;
   text-transform: uppercase;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
 }
 
 #footer .socials-media ul li a:hover {
   color: #007bff;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
 }
 
 #footer p {
   font-size: 12px;
   letter-spacing: 0.1em;
   font-weight: 500;
-  margin-top: 0;
+  margin: 10px 0 0;
   text-transform: uppercase;
 }
-
 .credits {
   font-size: 13px;
+}
+
+.equal-height-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-info {
+  flex-grow: 1;
 }
